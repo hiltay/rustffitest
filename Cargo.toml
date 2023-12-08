@@ -6,8 +6,13 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# libc = "0.2"
-# ndarray = { version = "0.15.6", default-features = false }
+# libc = {version ="0.2",default-features = false}
+ndarray = { version = "0.15.6", default-features = false }
+static-alloc = "0.2.4"
 panic-halt = "0.2.0"
+nalgebra = { version = "*", default-features = false, features = [
+    "alloc",
+    "libm",
+] }
 [lib]
 crate-type = ["staticlib"]
